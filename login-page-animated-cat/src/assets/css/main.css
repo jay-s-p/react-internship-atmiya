@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --blur-bg:#f9c28a77;
+    --color-primary: #f9c28a;
+    --color-secondary: #efa16c;
+    --color-1: #e07979;
+    --border-color: #a27345;
+
+}
+
+#cat-eye, #cat-lags{
+    transition: 0.5s;
+}
+
+#cat-lags{
+}
+
+*{
+    outline: 1px solid red;
+    outline: none;
+}
