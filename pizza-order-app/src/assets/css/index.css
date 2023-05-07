@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    --lol :#ffffffff;
+}
+
+.text-gradient-1 {
+    background: -webkit-radial-gradient(#00c0ff 0%, transparent 67.342%, rgba(255, 0, 60, 0.81) 100%) 78% 11%/135% 116%,
+        -webkit-radial-gradient(#30ff00 0%, #0098ff 31.741%, #00ff63 89.529%, #007dff 100%) 15% 77%/130% 145%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* https://unused-css.com/tools/text-gradient-generator?p=21EYcwvMwIYMYNYgE4HsCuA7AJgLgASIAoBiABhJhIDNLcSBSAGgBdEp0BnABykQFN0muAGwB2AHQBmACwAmRohDQCMgKwqGJBkM0kxADgCMASgNk6RkXrq4DBugHoDElddtD5xCVUplajUiQAnHrUuBIGYiJSdgwB1EISuHqBYioygf5kIpihpvQmLrgiIg5O9DZSLgDcAFAAtADuvMBwAJZMddDwSGhYdTAANq2ceEy8AB5MtY3NbR1jk3WUrQMD-cgDyIijrBzcfAJAA */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+
+}
