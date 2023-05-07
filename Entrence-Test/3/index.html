@@ -8,11 +8,19 @@
 
 <body bgcolor="#aaa">
     <div id="person-container">
-        <div id="add_person"></div>
+        <div id="add_person">
+        </div>
     </div>
-    <button onclick="DOM.add_person()">Add Person</button>
+    <button onclick="DOM.addPerson()">Add Person</button>
+    <br>
+    <br>
+    <button>Calculate</button>
+    <button onclick="console.log('object'); tripMembersHandler.reset(); location.reload()">Reset</button>
 </body>
 
+<script src="./DOMHandler.js"></script>
+<script src="./TripMember.js"></script>
+<script src="./TripMemberHandler.js"></script>
 <script src="./index.js"></script>
 
 </html>
