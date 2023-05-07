@@ -60,7 +60,45 @@ class TripMembersHandler {
         }
     }
 
-    reset(){
+    totalExpenses() {
+        let totalExpenses = 0;
+        let individual_expenses = {}
+        for (const i of this.#personMap.values()) {
+            let x = parseFloat(i.totalExpense)
+            totalExpenses += x
+            individual_expenses[i.name] = x
+        }
+        let x = 1
+        if (this.#personMap.size !== 0)
+            x = this.#personMap.size
+        const average_expenses = Math.ceil(parseFloat(totalExpenses / x));
+
+        let abcd = {}
+        for (let individual of this.#personMap.values()) {
+            abcd[individual.name] = average_expenses - individual_expenses[individual.name]
+        }
+
+        let data = ""
+        for (let individual in abcd) {
+            if (abcd[individual] > 0)
+                data += (`You have to take ${individual}'s ${Math.abs((abcd[individual]))}$<br/>`);
+            else if (abcd[individual] < 0)
+                data += (`You have to pay ${individual} ${Math.abs((abcd[individual]))}$<br/>`);
+        }
+
+        document.getElementById("calculation_result").innerHTML = `
+        Total Expenses : ${totalExpenses}rs<br/>
+        Average Expenses : ${average_expenses}rs<br/>
+        ${data}
+        `
+
+    }
+
+    calculate() {
+        this.totalExpenses()
+    }
+
+    reset() {
         this.#personMap = new Map();
         this.storeData()
     }

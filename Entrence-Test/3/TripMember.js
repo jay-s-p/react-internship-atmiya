@@ -47,7 +47,7 @@ class TripMember {
 
     get totalExpense() {
         let sum = this.#tickets.reduce((acc, val) => acc + Number(val), 0);
-        return sum + this.#commonExpenses;
+        return sum + Number(this.#commonExpenses);
     }
 
     toString() {
