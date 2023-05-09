@@ -14,6 +14,19 @@ body{
     /* https://unused-css.com/tools/text-gradient-generator?p=21EYcwvMwIYMYNYgE4HsCuA7AJgLgASIAoBiABhJhIDNLcSBSAGgBdEp0BnABykQFN0muAGwB2AHQBmACwAmRohDQCMgKwqGJBkM0kxADgCMASgNk6RkXrq4DBugHoDElddtD5xCVUplajUiQAnHrUuBIGYiJSdgwB1EISuHqBYioygf5kIpihpvQmLrgiIg5O9DZSLgDcAFAAtADuvMBwAJZMddDwSGhYdTAANq2ceEy8AB5MtY3NbR1jk3WUrQMD-cgDyIijrBzcfAJAA */
 }
 
+@keyframes scaleUpToDown {
+    from {
+        scale: 1.2;
+    }
+    to{
+        scale: 1;
+    }
+}
+
+.animate-scale{
+    animation: scaleUpToDown 1s ease forwards;
+}
+
 .scrollbar-none::-webkit-scrollbar {
     display: none;
 
