@@ -4,6 +4,19 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  mode:"jit",
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          "base-200": "#ecf1f5",
+          "base-300": "#dae3ea",
+        },
+      },
+      "dark"
+    ],
+  },
+  plugins: [require("daisyui")],
 }
 

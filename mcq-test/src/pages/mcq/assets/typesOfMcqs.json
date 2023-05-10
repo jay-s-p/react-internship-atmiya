@@ -1,0 +1,108 @@
+{
+  "mcqs": [
+    {
+      "id": 1,
+      "question": "What is the capital of India?",
+      "type": "single",
+      "options": [
+        "Mumbai",
+        "Delhi",
+        "Chennai",
+        "Kolkata"
+      ],
+      "answer": "Delhi"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is a mammal?",
+      "type": "multiple",
+      "options": [
+        "Shark",
+        "Snake",
+        "Elephant",
+        "Frog"
+      ],
+      "answer": [
+        "Elephant"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "The Earth is flat. True or False?",
+      "type": "truefalse",
+      "answer": "False"
+    },
+    {
+      "id": 4,
+      "question": "Match the following countries with their capitals.",
+      "type": "matching",
+      "items": [
+        {
+          "id": 1,
+          "text": "India",
+          "match": "New Delhi"
+        },
+        {
+          "id": 2,
+          "text": "Japan",
+          "match": "Tokyo"
+        },
+        {
+          "id": 3,
+          "text": "Russia",
+          "match": "Moscow"
+        },
+        {
+          "id": 4,
+          "text": "France",
+          "match": "Paris"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Arrange the following planets in order from closest to farthest from the sun.",
+      "type": "ordered",
+      "options": [
+        "Mars",
+        "Venus",
+        "Earth",
+        "Jupiter"
+      ],
+      "answer": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is a primary color?",
+      "type": "dropdown",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "Blue"
+    },
+    {
+      "id": 7,
+      "question": "Identify the following animal.",
+      "type": "image",
+      "options": [
+        "Lion",
+        "Tiger",
+        "Leopard",
+        "Cheetah"
+      ],
+      "answer": [
+        "Tiger"
+      ],
+      "image": "https://example.com/images/tiger.jpg"
+    }
+  ]
+}
