@@ -31,4 +31,24 @@ try:
 except Exception as e:
     exit("Error:", str(e))
 
+try:
+    file_name = f"./{app_name}/vite.config.js"
+    file_contents = None
+    with open(file_name, 'r') as file:
+        file_contents = file.read()
+    file_contents = file_contents.replace(
+        r"})",
+        r'''  server: {
+    host: ["192.168.1.244", "192.168.1.243"],
+    port: 80,
+  },
+})''')
+    try:
+        with open(file_name, 'w') as file:
+            file.write(file_contents)
+    except Exception as e:
+        exit("Error:", str(e))
+except:
+    exit("Somthing went wrong!")
+
 os.system(f"cd {app_name} && npm run dev")
