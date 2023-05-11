@@ -10,8 +10,7 @@ export default {
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          "base-200": "#ecf1f5",
-          "base-300": "#dae3ea",
+
         },
       },
       "dark"
