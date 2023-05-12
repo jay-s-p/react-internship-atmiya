@@ -3,39 +3,40 @@ import MCQContainer from "./pages/MCQContainer";
 import questions from "./assets/questions.json";
 import Result from "./pages/Result";
 import { storeData, retrieveData } from './crud/StoreRetrieveData'
+import { KEY_SELECTED_OPTION } from './assets/KEYS'
 
 function index() {
   const [showResult, setShowResult] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState({})
 
-  const KEY = "user_selected_options"
-
   const resetSelectedOptions = () => {
     setSelectedOptions({})
   }
 
-  useEffect(() => {
-    const data = retrieveData(KEY)
-    console.log(data);
-    if (Object.keys(data).length > 0)
-      setSelectedOptions(x => ({...x,...data}))
-  }, [])
+  // useEffect(async () => {
+  //   const data = await retrieveData(KEY_SELECTED_OPTION)
+  //   if (Object.keys(data).length > 0)
+  //     awaitsetSelectedOptions(x => ({ ...x, ...data }))
+  // }, [])
 
   useEffect(() => {
-    // console.log(selectedOptions); 
-    storeData(KEY, selectedOptions)
+    storeData(KEY_SELECTED_OPTION, selectedOptions)
   }, [selectedOptions])
 
 
   return (
     <>
-      {
-        showResult
-          ?
-          <Result selectedOptions={selectedOptions} setShowResult={setShowResult} questions={questions} />
-          :
-          <MCQContainer selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} resetSelectedOptions={resetSelectedOptions} questions={questions} setShowResult={setShowResult} />
-      }
+
+        {
+          showResult
+            ?
+            <Result selectedOptions={selectedOptions} setShowResult={setShowResult} questions={questions} setSelectedOptions={setSelectedOptions}/>
+            :
+            <>
+            <MCQContainer selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} resetSelectedOptions={resetSelectedOptions} questions={questions} setShowResult={setShowResult} />
+            </>
+        }
+
     </>
   )
 }

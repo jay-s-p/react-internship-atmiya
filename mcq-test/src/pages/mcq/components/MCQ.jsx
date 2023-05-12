@@ -6,7 +6,6 @@ const MCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
 
 
 	const handleChecked = (useSelectedOption) => {
-		// console.log("object");
 		if (checked === useSelectedOption) {
 			setChecked(-1)
 			setSelectedOptions(
@@ -45,7 +44,7 @@ const MCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
 						${checked == i ? "bg-blue-500 font-semibold border-blue-500 bg-opacity-20" : " hover:bg-base-300"}
 						`}
 							key={i}>
-							<input checked={checked == i} className="radio radio-sm my-auto radio-primary hidden" onClick={() => { handleChecked(i) }} type="radio" name={`option${id}${sr_no}`} />
+							<input checked={checked == i} readOnly className="radio radio-sm my-auto radio-primary hidden" onClick={() => { handleChecked(i) }} type="radio" name={`option${id}${sr_no}`} />
 							<span className="my-auto text-xl"><span className="font-semibold">{"( "}{String.fromCharCode(65 + i)}{" )"}&nbsp;&nbsp;</span> {option}</span>
 						</label>
 					))}
