@@ -1,0 +1,57 @@
+[
+  {
+    "id": 9871,
+    "question": "What is the capital of India?",
+    "options": [
+      "Mumbai",
+      "Kolkata",
+      "New Delhi",
+      "Chennai"
+    ],
+    "answer": "New Delhi"
+  },
+  {
+    "id": 9872,
+    "question": "Which river is known as the 'Ganga' in India?",
+    "options": [
+      "Yamuna",
+      "Brahmaputra",
+      "Indus",
+      "Ganges"
+    ],
+    "answer": "Ganges"
+  },
+  {
+    "id": 9873,
+    "question": "Which of the following is a famous monument in India?",
+    "options": [
+      "Taj Mahal",
+      "Eiffel Tower",
+      "Great Wall of China",
+      "Statue of Liberty"
+    ],
+    "answer": "Taj Mahal"
+  },
+  {
+    "id": 9874,
+    "question": "What is the national animal of India?",
+    "options": [
+      "Lion",
+      "Elephant",
+      "Tiger",
+      "Leopard"
+    ],
+    "answer": "Tiger"
+  },
+  {
+    "id": 9875,
+    "question": "Which of the following is a popular sport in India?",
+    "options": [
+      "Football",
+      "Cricket",
+      "Basketball",
+      "Tennis"
+    ],
+    "answer": "Cricket"
+  }
+]
