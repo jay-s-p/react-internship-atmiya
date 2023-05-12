@@ -2,22 +2,20 @@ import { useEffect, useState } from "react";
 import MCQContainer from "./pages/MCQContainer";
 import questions from "./assets/questions.json";
 import Result from "./pages/Result";
-import { storeData, retrieveData } from './crud/StoreRetrieveData'
+import { storeData, retrieveData } from './crud/StoreRetrieveDataMap'
 import { KEY_SELECTED_OPTION } from './assets/KEYS'
 
 function index() {
   const [showResult, setShowResult] = useState(false)
-  const [selectedOptions, setSelectedOptions] = useState({})
+  const [selectedOptions, setSelectedOptions] = useState(new Map())
 
-  const resetSelectedOptions = () => {
-    setSelectedOptions({})
-  }
-
-  // useEffect(async () => {
-  //   const data = await retrieveData(KEY_SELECTED_OPTION)
-  //   if (Object.keys(data).length > 0)
-  //     awaitsetSelectedOptions(x => ({ ...x, ...data }))
-  // }, [])
+  useEffect(()=>{
+    (async () => {
+      const data = await retrieveData(KEY_SELECTED_OPTION)
+      if (data.size > 0)
+        await setSelectedOptions(new Map(data));
+    })()
+  }, [])
 
   useEffect(() => {
     storeData(KEY_SELECTED_OPTION, selectedOptions)
@@ -26,17 +24,15 @@ function index() {
 
   return (
     <>
-
-        {
-          showResult
-            ?
-            <Result selectedOptions={selectedOptions} setShowResult={setShowResult} questions={questions} setSelectedOptions={setSelectedOptions}/>
-            :
-            <>
-            <MCQContainer selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} resetSelectedOptions={resetSelectedOptions} questions={questions} setShowResult={setShowResult} />
-            </>
-        }
-
+      {
+        showResult
+          ?
+          <Result selectedOptions={selectedOptions} setShowResult={setShowResult} questions={questions} setSelectedOptions={setSelectedOptions} />
+          :
+          <>
+            <MCQContainer selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} questions={questions} setShowResult={setShowResult} />
+          </>
+      }
     </>
   )
 }

@@ -5,6 +5,7 @@ const storeData = (key, value) => {
 
 const retrieveData = (key) => {
   const value = localStorage.getItem(key);
+  console.log(value);
   return value ? JSON.parse(value) : null;
 }
 

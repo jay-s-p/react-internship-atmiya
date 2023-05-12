@@ -1,26 +1,26 @@
+import { useEffect } from "react";
+
 function Result({ selectedOptions, setShowResult, setSelectedOptions, questions }) {
 
   const getResult = () => {
-    console.log(selectedOptions);
-    return Object.values(questions).filter((que, i) => {
-      console.log("ans : " + que.answer);
-      console.log("selected: " + selectedOptions[i + 1]);
-      console.log(selectedOptions);
-      if (que.options[selectedOptions[i + 1]] === que.answer)
-        return true
-    })
+    return Object.values(questions).reduce((acc, que) => {
+      if (que.options[selectedOptions.get(que.id)] === que.answer) {
+        acc.push(que.id);
+      }
+      return acc;
+    }, []);
   }
-
+  
   const handleRestart = () => {
     setShowResult(0)
-    setSelectedOptions({})
+    setSelectedOptions(new Map())
   }
 
   const result = getResult()
 
   return (
     <>
-      <div className="h-screen w-screen grid">
+      <div className="h-[93vh] w-screen grid">
 
         <div className="grid">
           <h1 className="text-8xl font-serif m-auto">Result</h1>

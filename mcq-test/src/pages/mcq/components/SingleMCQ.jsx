@@ -1,32 +1,33 @@
 import { useEffect, useState } from "react";
 
 
-const MCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
-	const [question, options, id, answer] = [data.question, data.options, data.id, data.answer];
+const SingleMCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
 
+	const [question, options, id] = [data.question, data.options, data.id];
 
-	const handleChecked = (useSelectedOption) => {
-		if (checked === useSelectedOption) {
+	const handleChecked = (userSelectedOption) => {
+		if (checked == userSelectedOption) {
 			setChecked(-1)
-			setSelectedOptions(
-				(data => {
-					const { [sr_no]: removedKey, ...rest } = data;
-					return rest;
-				})
-			)
-		}
-		else {
-			setChecked(useSelectedOption);
-			setSelectedOptions(data => ({ ...data, [sr_no]: useSelectedOption }))
+			setSelectedOptions((dataMap) => {
+				dataMap = new Map(dataMap)
+				dataMap.delete(id)
+				return dataMap
+			})
+		} else {
+			setChecked(userSelectedOption)
+			setSelectedOptions((dataMap) => {
+				dataMap = new Map(dataMap).set(id, userSelectedOption)
+				return dataMap
+			})
 		}
 	}
-
-
-	const [checked, setChecked] = useState((selectedOptions[sr_no] !== undefined ? selectedOptions[sr_no] : -1))
+	
+	const [checked, setChecked] = useState((selectedOptions.get(id) !== undefined ? selectedOptions.get(id) : -1))
 
 	useEffect(() => {
+		console.log(selectedOptions);
 		try {
-			setChecked(selectedOptions[sr_no] !== undefined ? selectedOptions[sr_no] : -1); // reset checked option when data changes
+			setChecked(selectedOptions.get(id) !== undefined ? selectedOptions.get(id) : -1)
 		} catch (error) {
 			console.error("Error");
 		}
@@ -41,8 +42,7 @@ const MCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
 						<label className={`
 						bg-base-200 border-base-300 border p-3 flex gap-2 rounded-xl cursor-pointer  select-none transition-all duration-100
 						active:bg-opacity-30 active:bg-gray-500 active:scale-[.99] 
-						${checked == i ? "bg-blue-500 font-semibold border-blue-500 bg-opacity-20" : " hover:bg-base-300"}
-						`}
+						${checked == i ? "bg-blue-500 font-semibold border-blue-500 bg-opacity-20" : " hover:bg-base-300"}`}
 							key={i}>
 							<input checked={checked == i} readOnly className="radio radio-sm my-auto radio-primary hidden" onClick={() => { handleChecked(i) }} type="radio" name={`option${id}${sr_no}`} />
 							<span className="my-auto text-xl"><span className="font-semibold">{"( "}{String.fromCharCode(65 + i)}{" )"}&nbsp;&nbsp;</span> {option}</span>
@@ -54,4 +54,4 @@ const MCQ = ({ data, sr_no, setSelectedOptions, selectedOptions }) => {
 	)
 }
 
-export default MCQ
+export default SingleMCQ
