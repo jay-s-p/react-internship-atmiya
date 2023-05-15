@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Dr. Prakash Gujarati",
+    "experience": "7 years",
+    "speciality": "Dermatologist",
+    "address": "KKV hall, Rajkot",
+    "consult_fee": 500,
+    "rating": 4.9,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "919601026377",
+    "image": ""
+  },
+  {
+    "name": "Jay Parmar",
+    "experience": "1 years",
+    "speciality": "NonLogist",
+    "address": "Ahir chock, Rajkot",
+    "consult_fee": 0,
+    "rating": 4.1,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "919712591303",
+    "image": ""
+  },
+  {
+    "name": "Devendra Sumaniya",
+    "experience": "10 years",
+    "speciality": "DEVLogist",
+    "address": "DEV Road, Rajkot",
+    "consult_fee": 100,
+    "rating": 4.7,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "9199988877765",
+    "image": ""
+  },
+  {
+    "name": "Harshad Sorthiya",
+    "experience": "3 years",
+    "speciality": "ABCLogist",
+    "address": "Abc Road, Rajkot",
+    "consult_fee": 100,
+    "rating": 4.7,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "916305799479",
+    "image": ""
+  },
+  {
+    "name": "Harshal Katariya",
+    "experience": "9 years",
+    "speciality": "AnyLogist",
+    "address": "Any chock, Rajkot",
+    "consult_fee": 900,
+    "rating": 4.8,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "919925853895",
+    "image": ""
+  },
+  {
+    "name": "Husen Kureshi",
+    "experience": "7 years",
+    "speciality": "XyzLogist",
+    "address": "XYZ road, Rajkot",
+    "consult_fee": 0,
+    "rating": 4.9,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "918948392658",
+    "image": ""
+  },
+  {
+    "name": "Akshay Aboti",
+    "experience": "4 years",
+    "speciality": "IJKLogist",
+    "address": "IJK chock, Rajkot",
+    "consult_fee": 99,
+    "rating": 4.9,
+    "schedule": "mon-sat 9: 00 to 5: 00",
+    "contact": "919584930552",
+    "image": ""
+  }
+]
