@@ -2,9 +2,13 @@ import os
 import subprocess
 
 
-apps = [{'name': "Login app (🐈😺)", 'path': 'login-page-animated-cat'},
-        {'name': 'Pizza order', 'path': 'pizza-order-app'},
-        {'name': "MCQ test 🥴", 'path': 'mcq-test'}]
+apps = [
+    {'name': "Login app (🐈😺)", 'path': 'login-page-animated-cat'},
+    {'name': 'Pizza order', 'path': 'pizza-order-app'},
+    {'name': "MCQ test 🥴", 'path': 'mcq-test'},
+    {'name': 'Nav demo with state', 'path': 'nav-demo-app-state'},
+    {'name': 'Nav demo with router', 'path': 'nav-demo-app-router'},
+]
 
 
 def execute_app(app):
@@ -57,4 +61,4 @@ if not app_choice:
 if app_choice == len(apps)+1:
     executeAll()
 else:
-    execute(apps[app_choice])
+    execute(apps[app_choice-1])
