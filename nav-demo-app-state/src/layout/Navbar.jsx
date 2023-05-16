@@ -14,12 +14,9 @@ function Navbar({ selected, setSelected, navItems }) {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-
               {
                 navItems.map((nav) =><NavItems id={nav[0]} selected={selected} setSelected={setSelected} />)
               }
-
-
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import Navbar from './Navbar'
-import Home from './Home'
-import About from './About'
-import Services from './Services'
-import Portfolio from './Portfolio'
-import Contact from './Contact'
+import Navbar from './layout/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import Services from './pages/Services'
+import Portfolio from './pages/Portfolio'
+import Contact from './pages/Contact'
 
 function App() {
   
