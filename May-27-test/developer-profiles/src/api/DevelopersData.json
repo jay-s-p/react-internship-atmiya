@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Rajesh Kumar",
+    "designation": "Senior Software Developer",
+    "qualification": "Master's Degree in Computer Science",
+    "experience": "8 years of experience",
+    "homeCity": "Mumbai",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/rajeshkumar",
+      "facebook": "https://facebook.com/rajeshkumar",
+      "twitter": "https://twitter.com/rajeshkumar",
+      "linkedin": "https://linkedin.com/in/rajeshkumar",
+      "github": "https://github.com/rajeshkumar",
+      "website": "https://rajeshkumar.com"
+    }
+  },
+  {
+    "name": "Priya Sharma",
+    "designation": "Marketing Manager",
+    "qualification": "MBA in Marketing",
+    "experience": "6 years of experience",
+    "homeCity": "Delhi",
+    "jobCity": "Mumbai",
+    "platforms": {
+      "instagram": "https://instagram.com/priyasharma",
+      "facebook": "https://facebook.com/priyasharma",
+      "twitter": "https://twitter.com/priyasharma",
+      "linkedin": "https://linkedin.com/in/priyasharma",
+      "github": "https://github.com/priyasharma",
+      "website": "https://priyasharma.com"
+    }
+  },
+  {
+    "name": "Amit Patel",
+    "designation": "Financial Analyst",
+    "qualification": "Chartered Accountant",
+    "experience": "10 years of experience",
+    "homeCity": "Ahmedabad",
+    "jobCity": "Mumbai",
+    "platforms": {
+      "instagram": "https://instagram.com/amitpatel",
+      "facebook": "https://facebook.com/amitpatel",
+      "twitter": "https://twitter.com/amitpatel",
+      "linkedin": "https://linkedin.com/in/amitpatel",
+      "github": "https://github.com/amitpatel",
+      "website": "https://amitpatel.com"
+    }
+  },
+  {
+    "name": "Sneha Verma",
+    "designation": "Human Resources Manager",
+    "qualification": "MBA in Human Resources",
+    "experience": "7 years of experience",
+    "homeCity": "Pune",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/snehaverma",
+      "facebook": "https://facebook.com/snehaverma",
+      "twitter": "https://twitter.com/snehaverma",
+      "linkedin": "https://linkedin.com/in/snehaverma",
+      "github": "https://github.com/snehaverma",
+      "website": "https://snehaverma.com"
+    }
+  },
+  {
+    "name": "Vikram Singh",
+    "designation": "Graphic Designer",
+    "qualification": "Bachelor's Degree in Fine Arts",
+    "experience": "4 years of experience",
+    "homeCity": "Jaipur",
+    "jobCity": "Delhi",
+    "platforms": {
+      "instagram": "https://instagram.com/vikramsingh",
+      "facebook": "https://facebook.com/vikramsingh",
+      "twitter": "https://twitter.com/vikramsingh",
+      "linkedin": "https://linkedin.com/in/vikramsingh",
+      "github": "https://github.com/vikramsingh",
+      "website": "https://vikramsingh.com"
+    }
+  },
+  {
+    "name": "Neha Kapoor",
+    "designation": "Journalist",
+    "qualification": "Bachelor's Degree in Journalism",
+    "experience": "5 years of experience",
+    "homeCity": "Chandigarh",
+    "jobCity": "Mumbai",
+    "platforms": {
+      "instagram": "https://instagram.com/nehakapoor",
+      "facebook": "https://facebook.com/nehakapoor",
+      "twitter": "https://twitter.com/nehakapoor",
+      "linkedin": "https://linkedin.com/in/nehakapoor",
+      "github": "https://github.com/nehakapoor",
+      "website": "https://nehakapoor.com"
+    }
+  },
+  {
+    "name": "Aman Sharma",
+    "designation": "Product Manager",
+    "qualification": "Master's Degree in Business Administration",
+    "experience": "9 years of experience",
+    "homeCity": "Delhi",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/amansharma",
+      "facebook": "https://facebook.com/amansharma",
+      "twitter": "https://twitter.com/amansharma",
+      "linkedin": "https://linkedin.com/in/amansharma",
+      "github": "https://github.com/amansharma",
+      "website": "https://amansharma.com"
+    }
+  },
+  {
+    "name": "Riya Gupta",
+    "designation": "Software Tester",
+    "qualification": "Bachelor's Degree in Computer Science",
+    "experience": "3 years of experience",
+    "homeCity": "Kolkata",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/riyagupta",
+      "facebook": "https://facebook.com/riyagupta",
+      "twitter": "https://twitter.com/riyagupta",
+      "linkedin": "https://linkedin.com/in/riyagupta",
+      "github": "https://github.com/riyagupta",
+      "website": "https://riyagupta.com"
+    }
+  },
+  {
+    "name": "Sanjay Patel",
+    "designation": "Sales Manager",
+    "qualification": "Bachelor's Degree in Business Administration",
+    "experience": "6 years of experience",
+    "homeCity": "Ahmedabad",
+    "jobCity": "Mumbai",
+    "platforms": {
+      "instagram": "https://instagram.com/sanjaypatel",
+      "facebook": "https://facebook.com/sanjaypatel",
+      "twitter": "https://twitter.com/sanjaypatel",
+      "linkedin": "https://linkedin.com/in/sanjaypatel",
+      "github": "https://github.com/sanjaypatel",
+      "website": "https://sanjaypatel.com"
+    }
+  },
+  {
+    "name": "Sakshi Singh",
+    "designation": "Content Writer",
+    "qualification": "Bachelor's Degree in English Literature",
+    "experience": "4 years of experience",
+    "homeCity": "Jaipur",
+    "jobCity": "Delhi",
+    "platforms": {
+      "instagram": "https://instagram.com/sakshisingh",
+      "facebook": "https://facebook.com/sakshisingh",
+      "twitter": "https://twitter.com/sakshisingh",
+      "linkedin": "https://linkedin.com/in/sakshisingh",
+      "github": "https://github.com/sakshisingh",
+      "website": "https://sakshisingh.com"
+    }
+  },
+  {
+    "name": "Rahul Verma",
+    "designation": "Data Analyst",
+    "qualification": "Bachelor's Degree in Statistics",
+    "experience": "5 years of experience",
+    "homeCity": "Delhi",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/rahulverma",
+      "facebook": "https://facebook.com/rahulverma",
+      "twitter": "https://twitter.com/rahulverma",
+      "linkedin": "https://linkedin.com/in/rahulverma",
+      "github": "https://github.com/rahulverma",
+      "website": "https://rahulverma.com"
+    }
+  },
+  {
+    "name": "Ananya Joshi",
+    "designation": "Digital Marketing Specialist",
+    "qualification": "Bachelor's Degree in Marketing",
+    "experience": "4 years of experience",
+    "homeCity": "Mumbai",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/ananyajoshi",
+      "facebook": "https://facebook.com/ananyajoshi",
+      "twitter": "https://twitter.com/ananyajoshi",
+      "linkedin": "https://linkedin.com/in/ananyajoshi",
+      "github": "https://github.com/ananyajoshi",
+      "website": "https://ananyajoshi.com"
+    }
+  },
+  {
+    "name": "Gaurav Shah",
+    "designation": "Financial Advisor",
+    "qualification": "Chartered Financial Analyst",
+    "experience": "8 years of experience",
+    "homeCity": "Ahmedabad",
+    "jobCity": "Mumbai",
+    "platforms": {
+      "instagram": "https://instagram.com/gauravshah",
+      "facebook": "https://facebook.com/gauravshah",
+      "twitter": "https://twitter.com/gauravshah",
+      "linkedin": "https://linkedin.com/in/gauravshah",
+      "github": "https://github.com/gauravshah",
+      "website": "https://gauravshah.com"
+    }
+  },
+  {
+    "name": "Meera Rao",
+    "designation": "HR Consultant",
+    "qualification": "Master's Degree in Human Resources",
+    "experience": "7 years of experience",
+    "homeCity": "Hyderabad",
+    "jobCity": "Bengaluru",
+    "platforms": {
+      "instagram": "https://instagram.com/meerarao",
+      "facebook": "https://facebook.com/meerarao",
+      "twitter": "https://twitter.com/meerarao",
+      "linkedin": "https://linkedin.com/in/meerarao",
+      "github": "https://github.com/meerarao",
+      "website": "https://meerarao.com"
+    }
+  },
+  {
+    "name": "Alok Gupta",
+    "designation": "Software Engineer",
+    "qualification": "Bachelor's Degree in Computer Science",
+    "experience": "6 years of experience",
+    "homeCity": "Bengaluru",
+    "jobCity": "Pune",
+    "platforms": {
+      "instagram": "https://instagram.com/alokgupta",
+      "facebook": "https://facebook.com/alokgupta",
+      "twitter": "https://twitter.com/alokgupta",
+      "linkedin": "https://linkedin.com/in/alokgupta",
+      "github": "https://github.com/alokgupta",
+      "website": "https://alokgupta.com"
+    }
+  }
+]

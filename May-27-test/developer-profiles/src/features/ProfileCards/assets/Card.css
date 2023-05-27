@@ -1,0 +1,37 @@
+.card{
+  min-height: 14em;
+  width: 30em;
+  margin: 0;
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 1em;
+  cursor: default;
+
+}
+
+.card .card-image-container{
+  height: 100%;
+  width: 10em;
+}
+
+.card .card-image{
+  height: auto;
+  width : 100%;
+  object-fit: cover;
+  padding: 0.9em;
+  border-radius: 100% !important;
+  aspect-ratio: 1/1;
+}
+
+.card .card-body-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.3em;
+}
+.card .card-body-container .card-body-social-container{
+  /* style={{ display: "flex", gap: "1em", marginTop: "auto" }} */
+  display: flex;
+  gap: 1em;
+  margin-top: auto;
+}
