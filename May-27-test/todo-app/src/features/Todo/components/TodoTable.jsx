@@ -27,10 +27,10 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
     };
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-    console.log("data changed");
-  }, [data])
+  // useEffect(() => {
+  //   console.log(data[0].key, data[1].key , data[0].completed , " - ", data[1].completed);
+  //   console.log("data changed");
+  // }, [data])
 
   const showEditModal = (record) => {
     Modal.confirm({
@@ -38,6 +38,7 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
       icon: <EditOutlined />,
       okButtonProps: { style: { display: 'none' } },
       cancelButtonProps: { style: { display: 'none' } },
+      style: !isDesktop && { top: "calc(100vh - 20em)",bottom:100 },
       content: (
         <>
           <Form onFinish={(v) => {
@@ -82,12 +83,17 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
     {
       title: '',
       dataIndex: 'completed',
+
+      fixed: 'left',
+      width: 55,
       key: 'completed',
       render: (text, record) => (
-        <div style={{ textAlign: 'center' }}>
-          <label htmlFor="myCheckbox01" className="checkbox">
+        <div style={{ textAlign: 'center', maxWidth: "1em", margin: "0" }}>
+          <label className="checkbox">
             <input
-              onChange={(e) => {
+              onChange={(e) => { }}
+              onClick={(e) => {
+                console.log("lol");
                 let newData = data.map((x) => {
                   if (x.key === record.key) {
                     x.completed = e.target.checked;
@@ -96,17 +102,14 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
                 });
                 setData(newData);
               }}
-              className="checkbox__input" type="checkbox" id="myCheckbox01"
+              className="checkbox__input"
+              type="checkbox"
               checked={record.completed}
-
             />
             <svg className="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
               <rect width={29} height={29} x=".5" y=".5" fill="#FFF" stroke="#006F94" rx={20.5} />
               <path className="tick" stroke="#6EA340" fill="none" strokeLinecap="round" strokeWidth={4} d="M9 15l4 4 8-8" />
             </svg>
-
-
-
           </label>
         </div>
       ),
@@ -123,7 +126,7 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
           <>
             <Paragraph
               delete={record.completed}
-              style={{ maxWidth: "20em" }}
+              style={{ maxWidth: "20em", margin: "0" }}
               ellipsis={{
                 rows: 1,
                 width: 10,
@@ -141,7 +144,7 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
           <>
             <Paragraph
               delete={record.completed}
-              style={{ maxWidth: "20em" }}
+              style={{ maxWidth: "20em", margin: "0" }}
               ellipsis={{
                 rows: 3,
                 width: 10,
@@ -172,12 +175,21 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
         <div style={{ display: 'flex', flexDirection: "column" }}>
           <Paragraph
             delete={record.completed}
-            style={{ maxWidth: "15em" }}
+            style={{ margin: "0", maxWidth: "15em" }}
             ellipsis={{
               rows: 1,
               width: 10,
             }}>
             {record.title}
+          </Paragraph>
+          <Paragraph
+
+            style={{ margin: "0", maxWidth: "15em", color: "#777" }}
+            ellipsis={{
+              rows: 1,
+              width: 10,
+            }}>
+            {record.description}
           </Paragraph>
           <div style={{ display: "flex", gap: '0.5em', marginTop: "0.2em" }}>
             <EditBtn onClick={() => showEditModal(record)} />
@@ -191,7 +203,10 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
 
   return (
     <>
-      <Table columns={columns} dataSource={data} pagination={false} />
+      <Table columns={columns} dataSource={data} pagination={false}
+        scroll={{
+          y: "calc(100vh - 32em)",
+        }} />
     </>
   );
 };

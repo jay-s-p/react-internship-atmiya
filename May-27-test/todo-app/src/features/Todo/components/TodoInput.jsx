@@ -3,7 +3,9 @@ import { PlusOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 
 
-const TodoInput = ({ addTask = () => {console.log("PLS pass the addTask");} }) => {
+const TodoInput = ({ addTask = () => { console.log("PLS pass the addTask"); },clearAll = () => {console.log("PLS pass the clear all");} }) => {
+
+  const [form] = Form.useForm();
 
   const generateKey = () => {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
@@ -25,6 +27,7 @@ const TodoInput = ({ addTask = () => {console.log("PLS pass the addTask");} }) =
       completed: false,
       ...getCurrentDateTime()
     })
+    form.resetFields();
   }
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -33,10 +36,11 @@ const TodoInput = ({ addTask = () => {console.log("PLS pass the addTask");} }) =
   return (
     <>
       <Form
-        name='todo'
+        form={form}
         layout='vertical'
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        onReset={() => form.resetFields()}
       >
         <Form.Item
           label="Enter task"
@@ -57,9 +61,19 @@ const TodoInput = ({ addTask = () => {console.log("PLS pass the addTask");} }) =
           <TextArea autoSize={{ minRows: 1, maxRows: 6 }} />
         </Form.Item>
         <Form.Item>
+          <div  style={{display:"flex", justifyContent:"space-between", width:"100%", flexWrap:"wrap", gap:"1em 0"}}>
+            <div style={{display:"flex", gap:"1em"}}>
           <Button type="primary" htmlType="submit">
             <PlusOutlined /> Add TODO
           </Button>
+          <Button type="primary" ghost htmlType="reset" >
+             Reset
+          </Button>
+            </div>
+          <Button type="primary" danger htmlType="reset" onClick={()=> clearAll()} >
+             ❎ Clear all
+          </Button>
+          </div>
         </Form.Item>
       </Form>
     </>
