@@ -2,9 +2,6 @@
 
 const NavItems = ({ id, name, setSelected, selected }) => {
 
-  console.log("id  " + id);
-  console.log("name  " + (name ? name : id));
-  console.log("Selected   "+ (selected === id));
   const handleSelect = (event) => setSelected(event.target.name);
 
   const className = `${selected == id  && 'bg-gray-700 ' || ""}text-white text-gray-300 cursor-pointer hover:text-white px-3 py-2 rounded-md text-sm font-medium `
