@@ -39,8 +39,10 @@ try:
         file_contents = file.read()
     file_contents = file_contents.replace(
         r"})",
-        r'''//  server: {
-  //  host: ["192.168.1.244", "192.168.1.243", "localhost"],
+        r'''
+  base: './',
+  //  server: {
+  //  host: ["localhost", "192.168.1.244", "192.168.1.243"],
   //  port: 80,
   // },
 })''')
