@@ -1,0 +1,80 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+#person-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset {
+  border: 2px solid #3d90ff;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #3d90ff;
+}
+
+table {
+  width: 100%;
+  border: none;
+  box-shadow: 0em 1em 1em #00000022;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  padding: 0.5em;
+}
+
+td {
+  padding: 5px;
+  border: none;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+
+/* Button styles */
+button {
+  background-color: #3d90ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #1a60d1;
+  color: #ffffff;
+}
+
+button:active {
+  background-color: #0b3f99;
+  color: #ffffff;
+}
+
+button:focus {
+  /* outline: none; */
+  outline: 3px solid rgb(31, 110, 213) !important;
+  outline-offset: 1px;
+}
+
+/* Input focus styles */
+input[type="text"]:focus  {
+  outline: none;
+  border-color: #3d90ff;
+  box-shadow: 0 0 0 2px rgba(61, 144, 255, 0.5);
+}

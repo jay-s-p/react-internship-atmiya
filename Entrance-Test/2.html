@@ -1,0 +1,45 @@
+<!-- Implement a function that takes two strings and returns true if the second string is a rotation of the first string (e.g., "abc" and "bca"). -->
+
+<html>
+
+<head>
+    <title>Answer 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><label>Enter first string : </label></td>
+            <td><input onkeyup="handleOnChange()" type="text" id="value-1"></td>
+        </tr>
+        <tr>
+            <td><label>Enter second string : </label></td>
+            <td><input onkeyup="handleOnChange()" type="text" id="value-2"></td>
+        </tr>
+        <tr>
+            <td>
+                <div id="output"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    const isRotated = (a, b) => {
+        if (a.length !== b.length || a.length === 0)
+            return false
+        return (a + a).includes(b)
+    }
+    const handleOnChange = () => {
+        isRotated(
+            document.getElementById("value-1").value,
+            document.getElementById("value-2").value)
+            ?
+            document.getElementById("output").innerHTML = "Is palindrome? True"
+            :
+            document.getElementById("output").innerHTML = "Is palindrome? False"
+    }
+</script>
+
+</html>

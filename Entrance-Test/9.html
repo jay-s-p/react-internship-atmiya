@@ -1,0 +1,104 @@
+<!-- We have Provided the following Object :
+const quizData = {
+	questions: [
+		{ questionId: 1, options: ['A', 'B', 'C', 'D'], correctAnswer: 'A', difficulty: 'easy' },
+		{ questionId: 2, options: ['A', 'B', 'C', 'D'], correctAnswer: 'C', difficulty: 'medium' },
+		{ questionId: 3, options: ['A', 'B', 'C', 'D'], correctAnswer: 'B', difficulty: 'hard' },
+		{ questionId: 4, options: ['A', 'B', 'C', 'D'], correctAnswer: 'D', difficulty: 'medium' },
+		{ questionId: 5, options: ['A', 'B', 'C', 'D'], correctAnswer: 'A', difficulty: 'hard' },
+		{ questionId: 6, options: ['A', 'B', 'C', 'D'], correctAnswer: 'C', difficulty: 'easy' },
+	],
+};
+
+const attemptedAnswers = {
+	answers: [
+		{ questionId: 1, attemptedAnswer: 'A' },
+		{ questionId: 2, attemptedAnswer: 'B' },
+		{ questionId: 4, attemptedAnswer: 'D' },
+		{ questionId: 5, attemptedAnswer: 'A' },
+	],
+};
+
+The program should output the following information in the console:
+9 (i). total number of attempted questions,
+9 (ii).total number of unattempted questions,
+9 (iii).total number of correct questions,
+9 (iv).total number of wrong questions,
+9 (v).total score,
+9 (vi).the difficulty level based on the total score. -->
+<html>
+
+<head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+
+<script>
+    const quizData = {
+        questions: [
+            { questionId: 1, options: ['A', 'B', 'C', 'D'], correctAnswer: 'A', difficulty: 'easy' },
+            { questionId: 2, options: ['A', 'B', 'C', 'D'], correctAnswer: 'C', difficulty: 'medium' },
+            { questionId: 3, options: ['A', 'B', 'C', 'D'], correctAnswer: 'B', difficulty: 'hard' },
+            { questionId: 4, options: ['A', 'B', 'C', 'D'], correctAnswer: 'D', difficulty: 'medium' },
+            { questionId: 5, options: ['A', 'B', 'C', 'D'], correctAnswer: 'A', difficulty: 'hard' },
+            { questionId: 6, options: ['A', 'B', 'C', 'D'], correctAnswer: 'C', difficulty: 'easy' },
+        ],
+    };
+
+    const attemptedAnswers = {
+        answers: [
+            { questionId: 1, attemptedAnswer: 'A' },
+            { questionId: 2, attemptedAnswer: 'B' },
+            { questionId: 4, attemptedAnswer: 'D' },
+            { questionId: 5, attemptedAnswer: 'A' },
+        ],
+    };
+
+    let totalAttempted = attemptedAnswers.answers.length;
+    let totalUnattempted = quizData.questions.length - totalAttempted;
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    let totalScore = 0;
+    let difficultyLevel = '';
+
+    attemptedAnswers.answers.forEach((attemptedAnswer) => {
+        quizData.questions.forEach((question) => {
+            if (attemptedAnswer.questionId === question.questionId) {
+                if (attemptedAnswer.attemptedAnswer === question.correctAnswer) {
+                    totalCorrect++;
+                    totalScore++;
+                } else {
+                    totalWrong++;
+                    totalScore--;
+                }
+            }
+        });
+    });
+
+    if (totalScore >= 0 && totalScore <= 2) {
+        difficultyLevel = 'easy';
+    } else if (totalScore >= 3 && totalScore <= 4) {
+        difficultyLevel = 'medium';
+    } else {
+        difficultyLevel = 'hard';
+    }
+
+    document.getElementById('output').innerHTML = `
+        <p>total number of attempted questions: ${totalAttempted}</p>
+        <p>total number of unattempted questions: ${totalUnattempted}</p>
+        <p>total number of correct questions: ${totalCorrect}</p>
+        <p>total number of wrong questions: ${totalWrong}</p>
+        <p>total score: ${totalScore}</p>
+        <p>the difficulty level based on the total score: ${difficultyLevel}</p>
+    `;
+
+
+</script>
+
+</html>

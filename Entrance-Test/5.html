@@ -1,0 +1,89 @@
+<!-- Write a function that takes a string as input and creates an unordered list element '<ul>' with list items '<li>' for each character in the string. Append the list to the body of the HTML document. -->
+<html>
+
+<head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            list-style: none;
+            gap: 10px;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            margin-bottom: 5px;
+            padding: 5px 9px;
+            background-color: #e5e9ff;
+            border-radius: 3px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            border: 1px solid #333;
+            transition: 150ms;
+            outline: 3px solid #526efc00;
+            outline-offset: 3px;
+        }
+
+        input[type="text"]:hover {
+            outline: 3px solid #b7c3ff;
+        }
+
+        input[type="text"]:focus {
+            outline: 3px solid #526efc;
+        }
+
+        button {
+            margin-left: 9px;
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #526efc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: 3px solid #526efc00;
+            outline-offset: 3px;
+            transition: 200ms;
+        }
+
+        button:hover {
+            background-color: #445cd2;
+        }
+
+        button:focus {
+            outline: 3px solid #526efc;
+        }
+
+        button:active {
+            scale: 0.9;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" id="string">
+    <button onclick="createList()">Create List</button>
+    <ul id="list"></ul>
+
+</body>
+
+<script>
+    const createList = () => {
+        let value = document.getElementById("string").value;
+        const ul = document.getElementById("list");
+        ul.innerHTML = "";
+        for (let i = 0; i < value.length; i++) {
+            const li = document.createElement("li");
+            li.innerHTML = value[i];
+            ul.appendChild(li);
+        }
+    }
+</script>
+
+</html>

@@ -32,8 +32,6 @@
 // let [total_expenses, individual_expenses, abcd] = calculate()
 
 // for (let individual in abcd) {
-//     if (abcd[individual] > 0)
-//         console.log(`You have to take ${individual}'s ${Math.abs(abcd[individual])}$`);
-//     else if (abcd[individual] < 0)
-//         console.log(`You have to pay ${individual} ${Math.abs(abcd[individual])}$`);
+//     if (abcd[individual] > 0)}$`);
+//     else if (abcd[individual] < 0)}$`);
 // 

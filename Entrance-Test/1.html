@@ -4,6 +4,7 @@
 
 <head>
     <title>Answer 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -39,18 +40,13 @@
         for (let word of words) {
             if (word == "") continue
             word_count[word] = word_count[word] ? word_count[word] + 1 : 1;
-        }
-
-        console.log(char_count);
-        console.log(word_count);
+        };;
 
         // Finding common character by comparing count
         let maxCharCount = 0;
         let maxChar;
         for (let char in char_count) {
-            if (char_count[char] > maxCharCount) {
-                console.log(char);
-                console.log(char_count[char]);
+            if (char_count[char] > maxCharCount) {;;
                 maxCharCount = char_count[char];
                 maxChar = char;
             }

@@ -1,0 +1,156 @@
+<!--  make a program in javascript : take items in an array from input box and list name of duplicate items and number of Quantity on all items. Display Output in Console in the object in Key as Product and Quantity as Value. -->
+
+<!-- Logic and Designed by ChatGPT -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Items Finder</title>
+    <style>
+        /* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=1060&t=st=1685294919~exp=1685295519~hmac=bf43a55f0654b033a20f87e48b8a2fb4765e8c1f0eb2f048f9454283e6d4fae8');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Container styles */
+.container {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Input styles */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: 3px solid rgb(61, 120, 255);
+}
+
+/* Button styles */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #4a4a4a;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+button:focus {
+  outline: 3px solid rgb(61, 120, 255);
+}
+
+button:hover {
+  background-color: #333;
+}
+
+button:active {
+  background-color: #1a1a1a;
+}
+
+/* Output styles */
+#output {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+
+  .container {
+    position: fixed;
+    border-radius: 1em 1em 0  0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:0;
+  }
+}
+
+    </style>
+</head>
+
+<body> <div class="container">
+    <input type="text" id="inputBox" placeholder="Enter items separated by commas">
+    <button onclick="findDuplicateItems()">Find Duplicate Items</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+   const findDuplicateItems = () => {
+  const input = document.getElementById('inputBox').value;
+  const items = input.split(',');
+
+  const itemMap = {};
+
+  for (let i = 0; i < items.length; i++) {
+    const itemName = items[i].trim();
+    if (itemMap[itemName]) {
+      itemMap[itemName]++;
+    } else {
+      itemMap[itemName] = 1;
+    }
+  }
+
+  const duplicateItems = {};
+  for (const itemName in itemMap) {
+    if (itemMap.hasOwnProperty(itemName) && itemMap[itemName] > 1) {
+      duplicateItems[itemName] = itemMap[itemName];
+    }
+  }
+
+  const outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = '';
+
+  for (const itemName in duplicateItems) {
+    if (duplicateItems.hasOwnProperty(itemName)) {
+      const count = duplicateItems[itemName];
+      const listItem = document.createElement('li');
+      listItem.textContent = `${itemName} (${count} times)`;
+      outputDiv.appendChild(listItem);
+    }
+  }
+
+  console.log(duplicateItems);
+};
+
+  </script>
+</body>
+
+</html>

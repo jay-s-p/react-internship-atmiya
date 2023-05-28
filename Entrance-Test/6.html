@@ -1,0 +1,119 @@
+<!-- Create an HTML form that allows users to input tasks, topics (comma-separated), and the time taken for each task in minutes. The form should output the total number of tasks, the total number of covered topics, and the total duration of all tasks in Hour:Minutes format. with javascript -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            border: 1px solid #333;
+            transition: 150ms;
+            outline: 3px solid #526efc00;
+            outline-offset: 3px;
+        }
+
+        input:hover {
+            outline: 3px solid #b7c3ff;
+        }
+
+        input:focus {
+            outline: 3px solid #526efc;
+        }
+
+        button {
+            margin-left: 9px;
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #526efc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: 3px solid #526efc00;
+            outline-offset: 3px;
+            transition: 200ms;
+        }
+
+        button:hover {
+            background-color: #445cd2;
+        }
+
+        button:focus {
+            outline: 3px solid #526efc;
+        }
+
+        button:active {
+            scale: 0.9;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            var taskInput = document.getElementById("taskInput");
+            var topicInput = document.getElementById("topicInput");
+            var timeInput = document.getElementById("timeInput");
+            var result = document.getElementById("result");
+
+            var tasks = taskInput.value.split(",");
+            var topics = topicInput.value.split(",").filter((topic) => topic.trim() != "")
+            var times = timeInput.value.split(",");
+
+            var totalTasks = tasks.length;
+            var totalTopics = topics.length;
+            var totalMinutes = 0;
+
+            for (var i = 0; i < times.length; i++) {
+                var time = parseInt(times[i]);
+                totalMinutes += time;
+            }
+
+            var hours = Math.floor(totalMinutes / 60);
+            var minutes = totalMinutes % 60;
+
+            result.innerHTML = "Total tasks: " + totalTasks + "<br>" +
+                "Total topics covered: " + totalTopics + "<br>" +
+                "Total duration: " + hours + " hours " + minutes + " minutes";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Task Form</h1>
+    <form>
+        <label for="taskInput">Tasks:</label>
+        <input type="text" id="taskInput" name="taskInput" placeholder="Enter tasks" required><br>
+
+        <label for="topicInput">Topics:</label>
+        <input type="text" id="topicInput" name="topicInput" placeholder="Enter topics" required><br>
+
+        <label for="timeInput">Time taken (in minutes):</label>
+        <input type="number" id="timeInput" name="timeInput" placeholder="Enter time taken" required><br>
+
+        <button type="button" value="Calculate" onclick="calculateTotal()">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+</body>
+
+</html>

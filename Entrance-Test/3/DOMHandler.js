@@ -2,10 +2,6 @@
 class DOMhandler {
 
     setFromData(p_id, name, tickets, commonExpenses) {
-        // console.log(p_id);
-        // console.log(name);
-        // console.log(tickets);
-        // console.log(commonExpenses);
         const input_change_name = `tripMembersHandler.changeName('${p_id}', this.value)`
         const dom_add_ticket = `DOM.addTicket('${p_id}')`
         const dom_remove_ticket = `DOM.removeLastTicket('${p_id}')`
@@ -13,7 +9,9 @@ class DOMhandler {
         let ticket_data = ""
         if (tickets)
             tickets.map((ticket, i) => ticket_data += `<tr class="${p_id}-tr-tickets"><td> Ticket ${i + 1} : </td><td><input type="text" value="${ticket}" oninput="tripMembersHandler.changeTickets('${p_id}', '${i}', this.value)"  class="${p_id}-t"></td> </tr>`)
-        const main_data = `<fieldset class="person"><legend>Person ${p_id.replace("p-", "")}</legend><table id="${p_id}" border="1">
+        const main_data = `<fieldset class="person" name="${p_id}"><legend>Person ${p_id.replace("p-", "")}
+        <button onclick="tripMembersHandler.removePerson('${p_id}')"> Remove</button>
+        </legend><table id="${p_id}" border="1">
             <tr id="${p_id}-tr-name">
                 <td>Name : </td>
                 <td>
@@ -42,15 +40,15 @@ class DOMhandler {
     }
 
     addPerson(name = null) {
-        const id = document.querySelectorAll("fieldset.person").length + 1
+        const id = document.querySelectorAll("fieldset.person")[document.querySelectorAll("fieldset.person").length - 1] ? parseInt(document.querySelectorAll("fieldset.person")[document.querySelectorAll("fieldset.person").length - 1].name.slice(2)) + 1 : 1
         const p_id = `p-${id}`
         const input_change_name = `tripMembersHandler.changeName('${p_id}', this.value)`
         const dom_add_ticket = `DOM.addTicket('${p_id}')`
         const dom_remove_ticket = `DOM.removeLastTicket('${p_id}')`
         const dom_add_common_expenses = `DOM.addCommonExpenses('${p_id}')`
         const HTML_Person = `
-        <fieldset class="person">
-            <legend>Person ${id}</legend>
+        <fieldset class="person" name="p-${id}">
+            <legend>Person ${id} <button onclick="tripMembersHandler.removePerson('p-${id}')">Remove</button></legend>
             <table id="${p_id}" border="1">
                 <tr id="${p_id}-tr-name">
                     <td>Name : </td>
@@ -77,9 +75,7 @@ class DOMhandler {
     }
 
     addTicket(id) {
-        let tickets = document.getElementsByClassName(`${id}-tr-tickets`);
-        console.log(`.${id}-tr-tickets`);
-        console.log(tickets.length);
+        let tickets = document.getElementsByClassName(`${id}-tr-tickets`);;;
         const input_change_ticket = `tripMembersHandler.changeTickets('${id}', ${tickets.length}, this.value)`
         const HTMLData = `<tr class="${id}-tr-tickets"><td> Ticket ${tickets.length + 1} : </td><td><input type="number"  oninput="${input_change_ticket}"  class="${id}-t" autofocus></td> </tr>`
         let OldData = document.getElementById(`${id}-add-ticket`).outerHTML
@@ -94,8 +90,6 @@ class DOMhandler {
     }
 
     addCommonExpenses(id) {
-        console.log(id + "-tr-common-expenses");
-        console.log(document.getElementById(id + "-tr-common-expenses"));
         const change_common_expenses = `tripMembersHandler.changeCommonExpenses('${id}', this.value)`;
         const HTMLData = ` <td>Common expenses : </td> <td><input type="number" oninput = "${change_common_expenses}" autofocus/></td> `
         document.getElementById(id + "-tr-common-expenses").innerHTML = HTMLData

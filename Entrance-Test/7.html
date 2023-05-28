@@ -1,0 +1,84 @@
+<!-- Create a 2D array in JavaScript representing a 6x6 grid. Each row of the grid should contain the letters A, B, C, D, E, and F in a random order, without repetition. Create a button.When it is clicked, the grid should be reshuffled such that the letters in each row are randomized again. -->
+<html>
+
+<head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <style>
+        .box {
+            height: 20px;
+            width: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            margin: 5px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        #grid {
+            list-style-type: none;
+            padding: 0;
+        }
+        button {
+            margin-left: 9px;
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #526efc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: 3px solid #526efc00;
+            outline-offset: 3px;
+            transition: 200ms;
+        }
+
+        button:hover {
+            background-color: #445cd2;
+        }
+
+        button:focus {
+            outline: 3px solid #526efc;
+        }
+
+        button:active {
+            scale: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="createGrid()">Create Grid</button>
+    <ul id="grid"></ul>
+
+</body>
+
+<script>
+    const createGrid = () => {
+        let arr = [
+            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"]
+        ];
+
+        let ul = document.getElementById("grid");
+        ul.innerHTML = "";
+
+        for (let i = 0; i < arr.length; i++) {
+            let li = document.createElement("li");
+            li.innerHTML = "<span class='box'>"+String(arr[i].sort(() => Math.random() - 0.5)).replaceAll(',','</span><span class=box>')+"</span>";
+            ul.appendChild(li);
+        }
+    }
+    createGrid()
+
+</script>
+
+</html>

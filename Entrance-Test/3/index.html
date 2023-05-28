@@ -4,19 +4,20 @@
 
 <head>
     <title>Answer 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body bgcolor="#aaa">
+<body>
     <div id="person-container">
         <div id="add_person">
         </div>
     </div>
-    <button onclick="DOM.addPerson()">Add Person</button>
+    <button onclick="DOM.addPerson()">+ Add Person</button>
     <br>
     <br>
     <div id="calculation_result"></div>
     <button onclick="tripMembersHandler.calculate()">Calculate</button>
-    <button onclick="console.log('object'); tripMembersHandler.reset(); location.reload()">Reset</button>
+    <button class="button" onclick="console.log('object'); tripMembersHandler.reset(); location.reload()">Reset</button>
 </body>
 
 <script src="./DOMHandler.js"></script>

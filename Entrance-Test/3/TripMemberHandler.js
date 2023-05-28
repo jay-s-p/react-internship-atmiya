@@ -32,6 +32,17 @@ class TripMembersHandler {
         this.storeData()
     }
 
+    removePerson(id) {
+        console.log(document.querySelectorAll("fieldset.person")[id.slice(2)-1]);
+        document.querySelectorAll("fieldset.person").forEach((value) => {
+            if (value.name === id)
+                value.remove()
+        })
+        // document.querySelectorAll("fieldset.person")[id.slice(2)-1].remove()
+        this.#personMap.delete(id);
+        this.storeData()
+    }
+
     getTotalMembers() {
         return this.#personMap.size;
     }
