@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { Table, Button, Checkbox, Modal, Input, Form } from 'antd'
-const { TextArea } = Input;
 import { EditOutlined, DeleteOutlined, ExclamationCircleFilled } from '@ant-design/icons';
+import '../assets/Checkbox.css'
+import { Table, Button, Checkbox, Modal, Input, Form, Typography } from 'antd'
+const { TextArea } = Input;
+const { Paragraph, Text } = Typography;
+
 
 const EditBtn = x => <Button {...x} shape='round' ghost type="primary"><EditOutlined /></Button>
 const RemoveBtn = x => <Button {...x} shape='round' ghost danger><DeleteOutlined /></Button>
@@ -9,6 +12,20 @@ const RemoveBtn = x => <Button {...x} shape='round' ghost danger><DeleteOutlined
 // TODO : Handle text overflow
 
 const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"); } }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 987);
+    };
+
+    handleResize(); // Check on initial mount
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     console.log(data);
@@ -23,24 +40,24 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
       cancelButtonProps: { style: { display: 'none' } },
       content: (
         <>
-          <Form onFinish={(v)=>{
-            setData(data.map(x=>x.key===record.key?{...x,title:v['edit-name'],description:v['edit-description']}:x))
+          <Form onFinish={(v) => {
+            setData(data.map(x => x.key === record.key ? { ...x, title: v['edit-name'], description: v['edit-description'] } : x))
             Modal.destroyAll()
           }}>
             <Form.Item name="edit-name" initialValue={record.title} >
-              <Input placeholder="Title"  />
+              <Input placeholder="Title" />
             </Form.Item>
-            <Form.Item  name="edit-description" initialValue={record.description} >
+            <Form.Item name="edit-description" initialValue={record.description} >
               <TextArea placeholder="Description" autoSize={{ minRows: 1, maxRows: 6 }} />
             </Form.Item>
-              <div style={{display:"flex", flexDirection:"row-reverse", gap:"1em"}}>
-              <Button type="primary" >
+            <div style={{ display: "flex", flexDirection: "row-reverse", gap: "1em" }}>
+              <Button type="primary" htmlType="submit">
                 Edit
               </Button>
-              <Button type="primary" ghost >
+              <Button type="primary" ghost onClick={Modal.destroyAll}>
                 Cancel
               </Button>
-              </div>
+            </div>
           </Form>
         </>
       ),
@@ -63,55 +80,114 @@ const TodoTable = ({ data = [], setData = () => { console.log("PLS pass setData"
 
   let columns = [
     {
-      title: 'ID',
-      dataIndex: 'id',
-      key: "id",
-      render: (text, record, index) => index + 1,
-    },
-    {
-      title: 'Title',
-      dataIndex: 'title',
-      key: "title"
-    },
-    {
-      title: 'Description',
-      dataIndex: 'description',
-      key: "description"
-    },
-    {
-      title: 'Action',
-      dataIndex: 'action',
-      key: "action",
-      render: (text, record) => (
-        <div style={{ display: "flex", gap: "0.5em", flexWrap:"wrap" }}>
-          <EditBtn onClick={() => { showEditModal(record) }} />
-          <RemoveBtn onClick={() => { showDeleteConfirm(record) }} />
-        </div>
-      )
-    },
-    {
       title: '',
       dataIndex: 'completed',
-      key: "completed",
+      key: 'completed',
       render: (text, record) => (
-        // use checkbox from antd for todo completed or not
-        <div style={{ textAlign: "center" }} >
-          <Checkbox
-            checked={record.completed}
-            onChange={(e) => {
-              let newData = data.map(x => {
-                if (x.key === record.key) {
-                  x.completed = e.target.checked
-                }
-                return x
-              })
-              setData(newData)
-            }}
-          />
+        <div style={{ textAlign: 'center' }}>
+          <label htmlFor="myCheckbox01" className="checkbox">
+            <input
+              onChange={(e) => {
+                let newData = data.map((x) => {
+                  if (x.key === record.key) {
+                    x.completed = e.target.checked;
+                  }
+                  return x;
+                });
+                setData(newData);
+              }}
+              className="checkbox__input" type="checkbox" id="myCheckbox01"
+              checked={record.completed}
+
+            />
+            <svg className="checkbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+              <rect width={29} height={29} x=".5" y=".5" fill="#FFF" stroke="#006F94" rx={20.5} />
+              <path className="tick" stroke="#6EA340" fill="none" strokeLinecap="round" strokeWidth={4} d="M9 15l4 4 8-8" />
+            </svg>
+
+
+
+          </label>
         </div>
-      )
-    }
-  ]
+      ),
+    },
+  ];
+
+  if (isDesktop) {
+    columns.push(
+      {
+        title: 'Title',
+        dataIndex: 'title',
+        key: 'title',
+        render: (text, record) => (
+          <>
+            <Paragraph
+              delete={record.completed}
+              style={{ maxWidth: "20em" }}
+              ellipsis={{
+                rows: 1,
+                width: 10,
+              }}>
+              {record.title}
+            </Paragraph>
+          </>
+        )
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+        key: 'description',
+        render: (text, record) => (
+          <>
+            <Paragraph
+              delete={record.completed}
+              style={{ maxWidth: "20em" }}
+              ellipsis={{
+                rows: 3,
+                width: 10,
+              }}>
+              {record.description}
+            </Paragraph>
+          </>
+        )
+      },
+      {
+        title: 'Action',
+        dataIndex: 'action',
+        key: 'action',
+        render: (text, record) => (
+          <div style={{ display: 'flex', gap: '0.5em' }}>
+            <EditBtn onClick={() => showEditModal(record)} />
+            <RemoveBtn onClick={() => showDeleteConfirm(record)} />
+          </div>
+        ),
+      },
+    );
+  } else {
+    columns.push({
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title',
+      render: (text, record) => (
+        <div style={{ display: 'flex', flexDirection: "column" }}>
+          <Paragraph
+            delete={record.completed}
+            style={{ maxWidth: "15em" }}
+            ellipsis={{
+              rows: 1,
+              width: 10,
+            }}>
+            {record.title}
+          </Paragraph>
+          <div style={{ display: "flex", gap: '0.5em', marginTop: "0.2em" }}>
+            <EditBtn onClick={() => showEditModal(record)} />
+            <RemoveBtn onClick={() => showDeleteConfirm(record)} />
+          </div>
+        </div>
+      ),
+    });
+  }
+
 
   return (
     <>
