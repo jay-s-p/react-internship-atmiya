@@ -1,5 +1,3 @@
-
-
 *::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -17,4 +15,45 @@
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
+}
+
+.icon-gradient {
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 50% 50%;
+  -moz-border-radius: 50% 50%;
+  border-radius: 50% 50%;
+  border: 4px solid white;
+  color: white;
+}
+
+.icon-gradient._0 {
+  background: #43257f;
+  background: linear-gradient(to bottom right, #43257f, #40c4ff);
+}
+
+.icon-gradient._1 {
+  background: #ee0979;
+  background: linear-gradient(to bottom right, #ee0979, #ff6a00);
+}
+
+
+.icon-gradient._2 {
+  background: #fbad3a;
+  background: linear-gradient(to bottom right, #fbad3a, #f15c24);
+}
+
+.icon-gradient._3 {
+  background: #2af598;
+  background: linear-gradient(to bottom right, #2af598, #019ffc);
+}
+
+
+.icon-gradient._4 {
+  background: #2ef4fd;
+  background: linear-gradient(to bottom right, #2ef4fd, #4facfe);
 }
