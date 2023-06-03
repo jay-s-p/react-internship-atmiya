@@ -1,0 +1,42 @@
+.dashboard-header-container {
+  margin-top: 3em;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4em;
+}
+
+.dashboard-header-title-sync {
+  color: #888;
+  font-weight: 600;
+}
+
+.dashboard-header-date-picker-container{
+  background: white;
+  height: fit-content;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboard-header-date-picker{
+  border: none;
+  outline: none;
+  padding: 0 10px 0 10px;
+}
+
+.header-date-picker-line{
+  border-left: 1px solid #ccc;
+  height: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header-container {
+    padding: 0 1em;
+  }
+}
