@@ -1,7 +1,6 @@
 import './LineText.css'
 
 const LineText = (props) => {
-  console.log(props)
   return (
     <>
       <div className='line-text-container'>
