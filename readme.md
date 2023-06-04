@@ -1,7 +1,7 @@
 
 # My ReactJS Projects
 
-## 🚀 [Live here (Github Pages)](https://jay-s-p.github.io/react-internship/)
+### 🚀 [Live here (Github Pages)](https://jay-s-p.github.io/react-internship/)
 
 <br/>
 
