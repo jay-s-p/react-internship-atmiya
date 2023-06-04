@@ -1,7 +1,6 @@
 import './TextImage.css'
 
 const TextImage = (props) => {
-  console.log(props?.image)
   return (
     <>
       <div className="d-flex">

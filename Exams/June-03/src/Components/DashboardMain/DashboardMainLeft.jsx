@@ -2,41 +2,13 @@ import DashboardCard from '../DashboardCard/DashboardCard'
 import LineText from './../LineText/LineText';
 import TextImage from './../TextImage/TextImage';
 
-
-const order_wise_breakup = [
-  {
-    name: 'Dining',
-    count: 1658,
-    order: 1,
-    percentage: '0%'
-  },
-  {
-    name: 'Delivery',
-    count: 0,
-    order: 0,
-    percentage: '0%'
-  },
-  {
-    name: 'Pickup',
-    count: 595,
-    order: 1,
-    percentage: '18%'
-  },
-  {
-    name: 'TOKEN',
-    count: 1020,
-    order: 2,
-    percentage: '31%'
-  },
-]
-
-const TotalSales = () => {
+const TotalSales = ({ total_sales }) => {
   return (
     <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 0ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>TOTAL SALES</div>
-          <div>3272</div>
+          <div>{total_sales?.toLocaleString('en-IN')}</div>
         </div>
       } image={
         [
@@ -48,13 +20,13 @@ const TotalSales = () => {
   )
 }
 
-const TotalOrders = () => {
+const TotalOrders = ({ total_orders }) => {
   return (
-    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 100ms 1 forwards" }}>
+    <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 100ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex  flex-column'>
           <div>TOTAL ORDERS</div>
-          <div>4</div>
+          <div>{total_orders?.toLocaleString('en-IN')}</div>
         </div>
       } image={
         [
@@ -66,13 +38,13 @@ const TotalOrders = () => {
   )
 }
 
-const Expenses = () => {
+const Expenses = ({ expenses }) => {
   return (
     <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 300ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>EXPENSES</div>
-          <div>0</div>
+          <div>{expenses?.toLocaleString('en-IN')}</div>
         </div>
       } image={
         [
@@ -84,13 +56,13 @@ const Expenses = () => {
   )
 }
 
-const Purchases = () => {
+const Purchases = ({ purchases }) => {
   return (
-    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 400ms 1 forwards" }}>
+    <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 400ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>PURCHASES</div>
-          <div>0</div>
+          <div>{purchases?.toLocaleString('en-IN')}</div>
         </div>
       } image={
         [
@@ -102,9 +74,9 @@ const Purchases = () => {
   )
 }
 
-const OrderWiseBreakup = () => {
+const OrderWiseBreakup = ({ order_wise_breakup }) => {
   return (
-    <DashboardCard title="🛍️ Order-wise Breakup"  style={{ opacity: "0", animation: "element-scale 500ms ease 500ms 1 forwards" }} >
+    <DashboardCard title="🛍️ Order-wise Breakup" style={{ opacity: "0", animation: "element-scale 500ms ease 500ms 1 forwards" }} >
       <div className='d-flex flex-column '>
         <div className='row'>
 
@@ -113,7 +85,7 @@ const OrderWiseBreakup = () => {
               <div key={index} className='col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column py-3'>
                 <div className='text-uppercase text-secondary text fw-semibold'>{item.name}</div>
                 <div className='fw-bold'>{item.count.toLocaleString('en-IN')}</div>
-                <div className='fw-semibold'>{item.order}</div>
+                <div className='fw-semibold'>{item.order.toLocaleString('en-IN')}</div>
                 <div className=' text-success '>{item.percentage}</div>
               </div>
             )
@@ -127,86 +99,87 @@ const OrderWiseBreakup = () => {
   )
 }
 
-const CreditSales = () => {
+const CreditTransaction = ({ credit_transaction }) => {
   return (
-    <DashboardCard title="💡Credit Transaction"  style={{ opacity: "0", animation: "element-scale 500ms ease 600ms 1 forwards" }}>
+    <DashboardCard title="💡Credit Transaction" style={{ opacity: "0", animation: "element-scale 500ms ease 600ms 1 forwards" }}>
       <LineText color="#2cde2c">
         <div>
           <div>Credit Sales</div>
-          <div className='fs-6'>Gross credit sales: 97,692</div>
+          <div className='fs-6'>Gross credit sales: {credit_transaction?.gross_sales?.toLocaleString('en-IN')}</div>
         </div>
-        <div className='fs-5 ms-auto my-auto'>2,253</div>
+        <div className='fs-5 ms-auto my-auto'>{credit_transaction?.sales?.toLocaleString('en-IN')}</div>
       </LineText>
       <LineText color="#f18282">
         <div>
           <div>Credit Sales</div>
-          <div className='fs-6'>Gross credit sales: 0</div>
+          <div className='fs-6'>Gross credit sales: {credit_transaction?.gross_credit?.toLocaleString('en-IN')}</div>
         </div>
-        <div className='fs-5 ms-auto my-auto'>0</div>
+        <div className='fs-5 ms-auto my-auto'>{credit_transaction?.gross_credit?.toLocaleString('en-IN')}</div>
       </LineText>
     </DashboardCard>
   )
 }
 
-const RevenueLeakage = () => {
+const RevenueLeakage = ({ revenue_leakage }) => {
   return (
-    <DashboardCard title="🔊 Revenue Leakage"  style={{ opacity: "0", animation: "element-scale 500ms ease 700ms 1 forwards" }}>
+    <DashboardCard title="🔊 Revenue Leakage" style={{ opacity: "0", animation: "element-scale 500ms ease 700ms 1 forwards" }}>
       <div className='d-flex '>
-        <LineText color="#2cde2c">Bills Modified : 0</LineText>
-        <LineText color="#2cde2c">Bills Cancels : 0</LineText>
-        <LineText color="#2cde2c">NC Items : 0</LineText>
+        <LineText color="#2cde2c">Bills Modified : {revenue_leakage?.bills_modified?.toLocaleString('en-IN')}</LineText>
+        <LineText color="#2cde2c">Bills Cancels : {revenue_leakage?.bills_cancels?.toLocaleString('en-IN')}</LineText>
+        <LineText color="#2cde2c">NC Items : {revenue_leakage?.nc_items?.toLocaleString('en-IN')}</LineText>
       </div>
     </DashboardCard>
   )
 }
 
-const Discounts = () => {
+const Discounts = ({ discounts }) => {
   return (
-    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 800ms 1 forwards" }}>
+    <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 800ms 1 forwards" }}>
       <div className=' fw-semibold'>Discounts</div>
-      <div className='d-flex  justify-content-center align-items-center mt-1'>
+      <div className='d-flex  justify-content-center align-items-baseline mt-1'>
         <ul>
-          <li className='text-danger'> <span className='text-black'> POS : 150 </span></li>
-          <li className='text-danger'> <span className='text-black'> Online: 0 </span></li>
+          <li className='text-danger'> <span className='text-black'> POS : {discounts?.pos?.toLocaleString('en-IN')} </span></li>
+          <li className='text-danger'> <span className='text-black'> Online: {discounts?.online?.toLocaleString('en-IN')} </span></li>
         </ul>
-        <div className='ms-auto'>150</div>
+        <div className='ms-auto fs-4 fw-semibold'>{discounts?.discount?.toLocaleString('en-IN')}</div>
       </div>
     </DashboardCard>
   )
 }
 
-const DashboardMainLeft = () => {
+const DashboardMainLeft = ({ data }) => {
+
   return (
     <>
       <div className="col-12 col-xl-9 m-0 p-0 mt-3">
         <div className="row w-100 m-0 px-3 px-md-0 h-auto">
           <div className="col-12 col-sm-6 col-lg-3 py-2 px-2">
-            <TotalSales />
+            <TotalSales total_sales={data?.total_sales} />
           </div>
           <div className="col-12 col-sm-6 col-lg-3 py-2 px-2">
-            <TotalOrders />
+            <TotalOrders total_orders={data?.total_orders} />
           </div>
           <div className="col-12 col-md-6 col-lg-3 py-2 px-2">
-            <Expenses />
+            <Expenses expenses={data?.expenses} />
           </div>
           <div className="col-12 col-md-6 col-lg-3 py-2 px-2">
-            <Purchases />
+            <Purchases purchases={data?.purchases} />
           </div>
         </div>
         <div className="row w-100 m-0 mt-3 px-3 px-md-0 h-auto">
           <div className="col-12 col-lg-8 py-2 px-2">
-            <OrderWiseBreakup />
+            <OrderWiseBreakup order_wise_breakup={data?.order_wise_breakup} />
           </div>
           <div className="col-12 col-lg-4 py-2 px-2">
-            <CreditSales />
+            <CreditTransaction credit_transaction={data?.credit_transaction} />
           </div>
         </div>
         <div className="row w-100 m-0 mt-3 px-3 px-md-0 h-auto">
           <div className="col-12 col-lg-8 py-2 px-2">
-            <RevenueLeakage />
+            <RevenueLeakage revenue_leakage={data?.revenue_leakage} />
           </div>
           <div className="col-12 col-lg-4 py-2 px-2">
-            <Discounts />
+            <Discounts discounts={data?.discounts} />
           </div>
         </div>
       </div>

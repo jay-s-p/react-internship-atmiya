@@ -1,6 +1,6 @@
 import './Header.css'
 
-const Header = ({ data = { name: "Jay" } }) => {
+const Header = ({ data = { name: "PLS pass the User's Name" } }) => {
   return (
     <>
       <div className="dashboard-header-container">
