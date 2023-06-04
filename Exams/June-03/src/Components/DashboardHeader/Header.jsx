@@ -5,7 +5,7 @@ const Header = ({ data = { name: "Jay" } }) => {
     <>
       <div className="dashboard-header-container">
         <div className="dashboard-header-title-container">
-          <h1 className='dashboard-header-title-name'>Welcome, {data.name} 👋</h1>
+          <h1 className='dashboard-header-title-name'>Welcome, {data.name} <span className='dashboard-header-title-name-emoji'>👋</span></h1>
           <div className='dashboard-header-title-sync'>Last order synced in {new Date().toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</div>
         </div>
         <div className="dashboard-header-date-picker-container">

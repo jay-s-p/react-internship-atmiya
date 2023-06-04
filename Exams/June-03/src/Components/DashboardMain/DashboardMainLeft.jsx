@@ -32,7 +32,7 @@ const order_wise_breakup = [
 
 const TotalSales = () => {
   return (
-    <DashboardCard >
+    <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 0ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>TOTAL SALES</div>
@@ -50,7 +50,7 @@ const TotalSales = () => {
 
 const TotalOrders = () => {
   return (
-    <DashboardCard>
+    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 100ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex  flex-column'>
           <div>TOTAL ORDERS</div>
@@ -68,7 +68,7 @@ const TotalOrders = () => {
 
 const Expenses = () => {
   return (
-    <DashboardCard>
+    <DashboardCard style={{ opacity: "0", animation: "element-scale 500ms ease 300ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>EXPENSES</div>
@@ -86,7 +86,7 @@ const Expenses = () => {
 
 const Purchases = () => {
   return (
-    <DashboardCard>
+    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 400ms 1 forwards" }}>
       <TextImage text={
         <div className='d-flex flex-column'>
           <div>PURCHASES</div>
@@ -104,7 +104,7 @@ const Purchases = () => {
 
 const OrderWiseBreakup = () => {
   return (
-    <DashboardCard title="🛍️ Order-wise Breakup" >
+    <DashboardCard title="🛍️ Order-wise Breakup"  style={{ opacity: "0", animation: "element-scale 500ms ease 500ms 1 forwards" }} >
       <div className='d-flex flex-column '>
         <div className='row'>
 
@@ -129,7 +129,7 @@ const OrderWiseBreakup = () => {
 
 const CreditSales = () => {
   return (
-    <DashboardCard title="💡Credit Transaction">
+    <DashboardCard title="💡Credit Transaction"  style={{ opacity: "0", animation: "element-scale 500ms ease 600ms 1 forwards" }}>
       <LineText color="#2cde2c">
         <div>
           <div>Credit Sales</div>
@@ -147,9 +147,10 @@ const CreditSales = () => {
     </DashboardCard>
   )
 }
+
 const RevenueLeakage = () => {
   return (
-    <DashboardCard title="🔊 Revenue Leakage">
+    <DashboardCard title="🔊 Revenue Leakage"  style={{ opacity: "0", animation: "element-scale 500ms ease 700ms 1 forwards" }}>
       <div className='d-flex '>
         <LineText color="#2cde2c">Bills Modified : 0</LineText>
         <LineText color="#2cde2c">Bills Cancels : 0</LineText>
@@ -158,9 +159,10 @@ const RevenueLeakage = () => {
     </DashboardCard>
   )
 }
+
 const Discounts = () => {
   return (
-    <DashboardCard>
+    <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 800ms 1 forwards" }}>
       <div className=' fw-semibold'>Discounts</div>
       <div className='d-flex  justify-content-center align-items-center mt-1'>
         <ul>

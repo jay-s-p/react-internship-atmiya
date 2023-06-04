@@ -1,3 +1,18 @@
+@keyframes up-to-down {
+  0% {
+    transform: translateY(-1em);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .dashboard-navbar-container {
   min-height: 2em;
@@ -7,7 +22,7 @@
   display: grid;
   border-bottom-right-radius: 1em;
   border-bottom-left-radius: 1em;
-
+  animation: up-to-down 700ms ease 0s 1;
 }
 
 ul.dashboard-navbar-list {

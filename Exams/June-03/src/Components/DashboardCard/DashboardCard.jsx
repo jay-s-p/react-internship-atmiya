@@ -3,7 +3,7 @@ import './DashboardCard.css'
 const DashboardCard = (props) => {
   return (
     <>
-      <div className="dashboard-card w-100">
+      <div className="dashboard-card w-100" style={props?.style}>
         {
           props?.title &&
           <>

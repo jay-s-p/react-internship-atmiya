@@ -4,7 +4,7 @@ import TextImage from './../TextImage/TextImage';
 
 const SMSCreditBalance = () => {
   return (
-    <div style={{ background: "#141e4a" }} className=' rounded-4 text-white px-3 pt-4 pb-3'>
+    <div style={{background: "#141e4a" , opacity: "0", animation: "element-scale 500ms ease 0ms 1 forwards" }} className=' rounded-4 text-white px-3 pt-4 pb-3'>
       <TextImage text={
         <div className='d-flex flex-column m-0'>
           <h6>SMS CREDIT BALANCE</h6>
@@ -25,7 +25,7 @@ const SMSCreditBalance = () => {
 
 const WhatsAppCreditBalance = () => {
   return (
-    <div style={{ background: "#141e4a" }} className=' rounded-4 text-white px-3 pt-4 pb-3 mt-3'>
+    <div style={{background: "#141e4a" , opacity: "0", animation: "element-scale 500ms ease 100ms 1 forwards" }}  className=' rounded-4 text-white px-3 pt-4 pb-3 mt-3'>
       <TextImage text={
         <div className='d-flex flex-column m-0'>
           <h6>WHATSAPP CREDIT BALANCE</h6>
@@ -46,8 +46,8 @@ const WhatsAppCreditBalance = () => {
 
 const PaymentBreakup = () => {
   return (
-    <div className='mt-3'>
-      <DashboardCard title="💳 Payment Breakup">
+    <div  className='mt-3'>
+      <DashboardCard  style={{ opacity: "0", animation: "element-scale 500ms ease 200ms 1 forwards" }} title="💳 Payment Breakup">
         <LineText >
           <div>
             <div>Amazon</div>

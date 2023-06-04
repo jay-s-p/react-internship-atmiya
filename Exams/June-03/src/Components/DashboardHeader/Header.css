@@ -1,3 +1,27 @@
+
+@keyframes hand-wave {
+  0% {
+    display: block;
+    scale: 1;
+    transform: rotate(0deg);
+  }
+
+  25% {
+    scale: 1.1;
+    transform: rotate(20deg);
+  }
+
+  75% {
+    scale: 1.1;
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+}
+
 .dashboard-header-container {
   margin-top: 3em;
   height: auto;
@@ -9,12 +33,24 @@
   padding: 0 4em;
 }
 
+.dashboard-header-title-name {
+  animation: element-scale 500ms ease 0s 1 ;
+}
+
+.dashboard-header-title-name-emoji {
+  animation: hand-wave 500ms linear 1500ms 1;
+  display: inline-block;
+}
+
 .dashboard-header-title-sync {
+  animation: element-scale 500ms ease 0s 1 ;
+  animation-fill-mode: forwards;
+  opacity: 0;
   color: #888;
   font-weight: 600;
 }
 
-.dashboard-header-date-picker-container{
+.dashboard-header-date-picker-container {
   background: white;
   height: fit-content;
   padding: 0.5em 1em;
@@ -22,15 +58,17 @@
   border: 1px solid #ccc;
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
+  animation: element-scale 500ms ease 200ms 1 forwards;
 }
 
-.dashboard-header-date-picker{
+.dashboard-header-date-picker {
   border: none;
   outline: none;
   padding: 0 10px 0 10px;
 }
 
-.header-date-picker-line{
+.header-date-picker-line {
   border-left: 1px solid #ccc;
   height: 1.5em;
 }
