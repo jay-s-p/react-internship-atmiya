@@ -1,0 +1,35 @@
+<!-- create a class with account holder name and balance with getter and setter method -->
+<html>
+	<head>
+		<title>Bank Program</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<h1>Bank program</h1>
+
+		<div class="box">
+			<span id="main"></span>
+			<span>
+				<button onclick="displayName()">Display name</button>
+			</span>
+			<span>
+				<button onclick="displayBalance()">Display balance</button>
+			</span>
+			<span>
+				<h3>Change name</h3>
+				<input name="nameInput" placeholder="enter your name here" type="text" /><br /><br />
+				<button onclick="changeName()">Submit</button>
+			</span>
+			<span>
+				<input name="amount" placeholder="enter amount here" type="number" /><br /><br />
+				<button onclick="debitBalance()">Credit balance</button> <br> <br>
+				<button onclick="creditBalance()">Debit balance</button>
+			</span>
+		</div>
+
+		<script src="Account.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

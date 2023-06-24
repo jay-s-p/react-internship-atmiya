@@ -1,8 +1,6 @@
 
 # My ReactJS Projects
 
-### 🚀 [Live here (Github Pages)](https://jay-s-p.github.io/react-internship/)
-
 <br/>
 
 1. [Pizza order app](./pizza-order-app/)
@@ -14,3 +12,6 @@
 7. [Developer Profile](./Exams/May-27-test/developer-profiles/)
 8. [Todo app](./Exams/May-27-test/todo-app/)
 9. [Entrence-Test (javascript)](./Exams/Entrance-Test)
+<br/>
+
+### ---> [COC React Project](./COC-React/)
