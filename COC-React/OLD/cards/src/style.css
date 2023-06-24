@@ -1,0 +1,12 @@
+.box {
+	width: 300px;
+	padding: 20px;
+	box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	margin-top: 2em;
+}
+img {
+	width: 260px;
+	border-radius: 17px;
+	margin-bottom: 1em;
+}
