@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import OrderPlaced from './pages/OrderPlaced'
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="" element={<Home />} />
         <Route path="about" element={<About />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
       <Route path="/order-placed" element={<OrderPlaced />} />
     </Routes>
   )
