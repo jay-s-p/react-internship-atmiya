@@ -2,6 +2,7 @@ import './App.css'
 import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
+import OrderPlaced from './pages/OrderPlaced'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/order-placed" element={<OrderPlaced />} />
       </Routes>
     </>
   )
