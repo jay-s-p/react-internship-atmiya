@@ -8,6 +8,7 @@ import MainNavbar from './layout/MainNavbar'
 import Products from './pages/Products'
 import Featured from './components/FeaturedProduct'
 import NewProduct from './components/NewProduct'
+import ProductHome from './components/ProductHome'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="products" element={<Products />} >
           {/* Nested Routes */}
+          <Route index element={<ProductHome />} />
           <Route path='featured' element={<Featured />} />
           <Route path='new' element={<NewProduct />} />
         </Route>
