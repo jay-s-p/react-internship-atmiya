@@ -1,5 +1,46 @@
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  color: #aaa;
+}
+
+a:hover {
+  color: #fff;
+}
+
 nav {
   display: flex;
   gap: 1rem;
   padding: 1rem;
+}
+
+nav>a {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+nav>a.active {
+  color: #fff;
+}
+
+nav>a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 300ms ease-out;
+}
+
+nav>a:hover::after,
+nav>a.active::after {
+  width: 100%;
 }
