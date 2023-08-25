@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, Outlet, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import OrderPlaced from './pages/OrderPlaced'
@@ -13,20 +13,24 @@ function App() {
       "" // This class will be added to the inactive link.
 
   return (
-    <>
-      <nav>
-        {/* By default, NavLink will add the class "active" to the active link. */}
-        {/* We can override this behavior by passing a function to the "className" prop. */}
-        {/* The function will receive an object with a property "isActive" that will be true if the link is active. */}
-        <NavLink className={navClassName} to="/">Home</NavLink>
-        <NavLink className={navClassName} to="about">About</NavLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/order-placed" element={<OrderPlaced />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={
+        <>
+          <nav>
+            {/* By default, NavLink will add the class "active" to the active link. */}
+            {/* We can override this behavior by passing a function to the "className" prop. */}
+            {/* The function will receive an object with a property "isActive" that will be true if the link is active. */}
+            <NavLink className={navClassName} to="">Home</NavLink>
+            <NavLink className={navClassName} to="about">About</NavLink>
+          </nav>
+          <Outlet />
+        </>
+      }>
+        <Route path="" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Route>
+      <Route path="/order-placed" element={<OrderPlaced />} />
+    </Routes>
   )
 }
 
