@@ -17,6 +17,7 @@ const MainNavbar = () => {
         <NavLink className={navClassName} to="">Home</NavLink>
         <NavLink className={navClassName} to="about">About</NavLink>
         <NavLink className={navClassName} to="products">Products</NavLink>
+        <NavLink className={navClassName} to="users">Users</NavLink>
       </nav>
       <Outlet />
     </>

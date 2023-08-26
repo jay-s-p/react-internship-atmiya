@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, Outlet, NavLink } from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import OrderPlaced from './pages/OrderPlaced'
@@ -9,6 +9,9 @@ import Products from './pages/Products'
 import Featured from './components/FeaturedProduct'
 import NewProduct from './components/NewProduct'
 import ProductHome from './components/ProductHome'
+import Users from './pages/Users'
+import User from './components/UserDetails'
+import AdminDetails from './components/AdminDetails'
 
 function App() {
 
@@ -22,6 +25,11 @@ function App() {
           <Route index element={<ProductHome />} />
           <Route path='featured' element={<Featured />} />
           <Route path='new' element={<NewProduct />} />
+        </Route>
+        <Route exact path="users" element={<Users />}>
+          {/* Dynamic Route */}
+          <Route path=":userId" element={<User />} />
+          <Route path="admin" element={<AdminDetails />} />
         </Route>
       </Route>
       <Route path="order-placed" element={<OrderPlaced />} />
