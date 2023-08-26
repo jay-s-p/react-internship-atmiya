@@ -12,6 +12,7 @@ import ProductHome from './components/ProductHome'
 import Users from './pages/Users'
 import User from './components/UserDetails'
 import AdminDetails from './components/AdminDetails'
+import Service from './pages/Service'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path=":userId" element={<User />} />
           <Route path="admin" element={<AdminDetails />} />
         </Route>
+        <Route path='services' element={<Service />} />
       </Route>
       <Route path="order-placed" element={<OrderPlaced />} />
       <Route path="*" element={<NotFound />} />
