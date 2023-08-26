@@ -2,7 +2,7 @@
 const AdminDetails = () => {
   return (
     <>
-      <h3>Admin Details</h3>
+      <h3>Hello, Admin</h3>
     </>
   )
 }
